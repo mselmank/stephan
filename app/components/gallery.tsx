@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export default function Gallery() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const images = [
     {
-      src: "/placeholder.svg?height=600&width=400",
+      src: "https://somhnrgibltmzpwfiemn.supabase.co/storage/v1/object/public/stephan//_DSC0232.jpg",
       alt: "Art piece 1",
-      title: "Ethereal Dreams",
+      title: "",
     },
     {
-      src: "/placeholder.svg?height=600&width=400",
+      src: "https://somhnrgibltmzpwfiemn.supabase.co/storage/v1/object/public/stephan//_DSC0285.jpg",
       alt: "Art piece 2",
-      title: "Urban Symphony",
+      title: "",
     },
     {
-      src: "/placeholder.svg?height=600&width=400",
+      src: "https://somhnrgibltmzpwfiemn.supabase.co/storage/v1/object/public/stephan//_DSC0314.jpg",
       alt: "Art piece 3",
-      title: "Digital Nostalgia",
+      title: "",
     },
     {
-      src: "/placeholder.svg?height=600&width=400",
+      src: "https://somhnrgibltmzpwfiemn.supabase.co/storage/v1/object/public/stephan//_DSC0345.jpg",
       alt: "Art piece 4",
-      title: "Abstract Reality",
+      title: "",
     },
-  ]
+  ];
 
   return (
     <section className="relative py-20">
@@ -59,13 +59,14 @@ export default function Gallery() {
                 />
               </div>
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <h3 className="text-xl font-semibold text-white">{image.title}</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  {image.title}
+                </h3>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-
